@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon CV</title>
+  <link rel="stylesheet" href="AccueilCV.css">
+   <link rel="icon" type="image/x-icon" href="faviconcv.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="sticky">
+  <header>
+      <a href="index.html"><img src="sorblogo.png" alt="Logo" width="120"></a>
+    <nav>
+      <ul>
+	   
+        <li><a href="#presentation">Présentation</a></li>
+		<li><a href="#diplomes">Parcours de formation</a></li>
+		<li><a href="#associative">Vie associative</a></li>
+        <li><a href="#experiences">Expériences professionnelles</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#formations">Formations complémentaires</a></li>
+		<li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  </div>
+  
+  
+  
+  <section id="presentation">
+      <div class="presentation-container">
+      <div class="presentation-image">
+        <img src="ppf.png" alt="Présentation" width="50%">
+      </div>
+      <div class="presentation-text">
+        <h2>Etudiant en Licence 2 MIASHS à la Sorbonne;</h2>
+        <p>passionné par l'univers des bases de données, la programmation, mais surtout leurs application pour optimiser l'efficacité les différents corps d'une entreprise je suis motivé pour intégrer la formation L3 MIAGE et me spécialiser en informatique des entreprises.</p>
+      </div>
+    </div>
+	</section>
+	
+	
+	
+	<div id="diplomes">
+	<img src="frise1.gif" width="100%" alt="CV Alternant potentiel">
+	</div>
+
+<div id="associative">
+  <div class="section-header1">
+    <h1>Vie associative</h1>
+  </div>
+  <div class="row1">
+    <div class="column1">
+      <HR><h2>Les papillons blancs de Paris</h2>
+	  <img src="lGOpp.png"> <hr>
+      <ul>
+        <li>Tuteur bénévole atelier d'informatique hebdomadaire</li>
+		 <li>Accompagnement dans l'utilisation de l'outil informatique avec une initiation</li>
+      </ul>
+    </div>
+    <div class="column1">
+      <HR><h2>Les taureaux de la sorbonne</h2>
+	  <img src="lgotoro.png"> <HR>
+      <ul>
+        <li>Membre de l'association</li>
+        <li>Participation à des évènements divers : concours de trading, conférences, pots</li>
+      </ul>
+    </div>
+</div>
+</div>
+<div id="experiences">
+<h2>Expérience professionnelles</h2>
+<img src="logoeth.png" width="100%">
+<button class="accordion" title="cliquez pour en savoir plus !">Vente en ligne en indépendant<span class="accordion-icon">+</span></button>
+<div class="panel">
+  <ul><li><p>01/21- à ce jour</p></li><li><p>Création de sites web.</p></li>
+  <li><p>Mise en place d'un système de paiement avec stripe et paypal.</p></li>
+  <li><p>Création d'un outil qui permet de prévisualiser un produit personnalisé.</p></li>
+  <li><p>Publicités sur les réseaux sociaux, Facebook ads, instagram ads, influenceurs.</p></li></ul>
+</div>
+
+<button class="accordion" title="cliquez pour en savoir plus !">Community manager/graphiste <span class="accordion-icon">+</span> </button>
+<div class="panel">
+  <ul><li><p>Groupe scolaire privé EL ISTIKMAL (01/20-06/22).</p></li>
+  <li><p>Tréation de visuels pour les réseaux sociaux, de flyer pour les campagnes publicitaires, de toute la charte graphique (logo, bannière, cartes de visites)</p></li>
+  <li><p>Transmission des messages de l'administration de de l'établissement.</p></li>
+  <li><p>Animation des réseaux sociaux et développement de la communauté de l'établissement.</p></li></ul>
+</div>
+
+<button class="accordion" title="cliquez pour en savoir plus !">Vendeur en boutique <span class="accordion-icon">+</span></button>
+<div class="panel">
+  <ul><li><p>F3 MARKET (01/19-08/19), Xiaomi store (09/21-04/22), Dyson demo store (10/23-à ce jour).</p></li>
+  <li><p>Tenue de la caisse et introduction des nouveaux produits dans le système d'encaissement.</p></li>
+  <li><p>Accueil et conseil de la clientèle.</p></li>
+  <li><p>Ouverture/fermeture, réception des livraison.</p></li></ul>
+</div>
+
+<button class="accordion" title="cliquez pour en savoir plus !">Assistant développeur/vente en ligne<span class="accordion-icon">+</span></button>
+<div class="panel">
+  <ul><li><p>La digitalization SAS (09/22-à ce jour).</p></li>
+  <li><p>Développement web (sites web modernes et responsives).</p></li>
+  <li><p>Graphisme (création de logo, bannière visuels pour les besoins des clients de l'entreprise).</p></li>
+  <li><p>Télé-travail.</p></li></ul>
+</div>
+
+<script>
+var accordions = document.getElementsByClassName("accordion");
+
+for (var i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+</script></div>
+
+<div id="competences">
+  <div class="section-header">
+    <h1>Compétences</h1>
+  </div>
+  <div class="row">
+    <div class="column">
+      <h2>Compétences techniques</h2>
+      <ul>
+        <li>Langages html,CSS,Javascript,PHP</li>
+               <li>Langages python,SQL,Java</li>
+	   <li>Maria DB, looping, MySQL, PHPmyAdmin</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h2>Bureautique</h2>
+      <ul>
+        <li>Office : Word,excel,PowerPoint</li>
+        <li>Graphisme : PhotoShop, AfterEffect, Canva</li>
+        <li>Montage vidéo : WindowsMovieMaker, iMovie</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h2>Langues</h2>
+      <ul>
+        <li>Français : maternelle</li>
+        <li>Dialecte algérien : maternelle / Arabe : B2 (certification en cours) </li>
+        <li>Anglais : C1 (certification en cours)/ Espagnol : A2  </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="formations">
+<img src="forma.png" width="100%">
+</div>
+<p align="center">©BouadjenakMoncef</p>
+
+</body>
+</html>
