@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon CV</title>
+  <link rel="stylesheet" href="contact.css">
+   <link rel="icon" type="image/x-icon" href="faviconcv.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="sticky">
+  <header>
+      <a href="index.html"><img src="sorblogo.png" alt="Logo" width="120"></a>
+    <nav>
+      <ul>
+	   
+        <li><a href="index.html">Présentation</a></li>
+		<li><a href="index.html#diplomes">Parcours de formation</a></li>
+		<li><a href="index.html#associative">Vie associative</a></li>
+        <li><a href="index.html#experiences">Expériences professionnelles</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="index.html#formations">Formations complémentaires</a></li>
+		<li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  </div>
+<br><hr><br>
+
+<div class="formm">
+<form id="contact-form" method="post" action="">
+  <div class="form-group">
+    <label for="name">Nom*</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="surname">Prénom*</label>
+    <input type="text" class="form-control" id="surname" name="surname" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Téléphone</label>
+    <input type="tel" class="form-control" id="phone" name="phone" pattern="[\+0-9]+" maxlength="15">
+  </div>
+  <div class="form-group">
+    <label for="subject">Objet*</label>
+    <input type="text" class="form-control" id="subject" name="subject" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message*</label>
+    <textarea class="form-control" id="message" name="message" required"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+ <script>
+const form = document.getElementById("contact-form");
+const nameInput = document.getElementById("name");
+const surnameInput = document.getElementById("surname");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const subjectInput = document.getElementById("subject");
+const messageInput = document.getElementById("message");
+const errorMessage = document.getElementById("error-message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!validateName(nameInput.value)) {
+    showError(nameInput, "Le nom ne doit pas contenir de chiffres.");
+  }
+  else if (!validateName(surnameInput.value)) {
+    showError(surnameInput, "Le prénom ne doit pas contenir de chiffres.");
+  }
+
+  else if (!validateEmail(emailInput.value)) {
+    showError(emailInput, "Veuillez saisir un email valide.");
+  }
+  else if (!validatePhone(phoneInput.value)) {
+    showError(phoneInput, "Le numéro de téléphone doit contenir 10 chiffres ou un + suivi de 11 chiffres maximum.");
+  }
+  else if (!validateRequired(subjectInput.value)) {
+    showError(subjectInput, "Veuillez saisir un objet pour votre message.");
+  }
+  else if (!validateRequired(messageInput.value)) {
+    showError(messageInput, "Veuillez saisir un message.");
+  }
+  else {
+    form.submit();
+  }
+});
+
+
+function validateName(value) {
+  return /^[a-zA-ZÀ-ÿ]+$/.test(value);
+}
+
+
+function validateEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+
+function validatePhone(value) {
+  return /^(\+?\d{1,11})?$/.test(value) && value.replace(/\D/g,'').length >= 10;
+}
+
+
+function validateRequired(value) {
+  return value.trim() !== "";
+}
+
+function showError(input, message) {
+  input.classList.add("error");
+  errorMessage.innerText = message;
+}
+
+	</script>
+</div>
+</body>
+</html>
