@@ -199,6 +199,45 @@ color: white;
 .active, .accordion:hover {
   background-color: var(--bleu-fonce);
 }
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-icon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+}
+
+.accordion1:hover .accordion-icon {
+  color: var(--beige);
+  size : 20px;
+}
+
+.accordion1:hover {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.accordion1 {
+  background-color: var(--jaune);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+    position: relative;
+	font-size : 20px;
+}
+
+.active, .accordion1:hover {
+  background-color: var(--bleu-fonce);
+}
 
 .panel {
   padding: 0 18px;
