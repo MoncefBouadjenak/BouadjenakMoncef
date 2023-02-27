@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Mon CV</title>
   <link rel="stylesheet" href="contact.css">
-   <link rel="icon" type="image/x-icon" href="faviconcv.png">
+   <link rel="icon" type="image/x-icon" href="faviconcv.ico">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -53,8 +53,35 @@
     <label for="message">Message*</label>
     <textarea class="form-control" id="message" name="message" required"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Envoyer</button>
+  <button type="submit" class="btn btn-primary" name="conf">Envoyer</button>
 </form>
+<?php
+if(isset($_POST['conf'])) { 
+  $name = isset($_POST['name']) ? $_POST['name'] : ''; 
+  $surname = isset($_POST['surname']) ? $_POST['surname'] : '';
+  $email = isset($_POST['email']) ? $_POST['email'] : '';
+  $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+  $subject = isset($_POST['subject']) ? $_POST['subject'] : '';
+  $message = isset($_POST['message']) ? $_POST['message'] : '';
+
+  $to = "bouadjenakmoncef@gmail.com";
+  $subject_email = "Nouveau message de contact depuis le site web";
+
+  $message_email = "Nom: " . $name . "\n";
+  $message_email .= "Prénom: " . $surname . "\n";
+  $message_email .= "Email: " . $email . "\n";
+  $message_email .= "Téléphone: " . $phone . "\n\n";
+  $message_email .= "Objet: " . $subject . "\n\n";
+  $message_email .= "Message:\n" . $message . "\n";
+
+  if (mail($to, $subject_email, $message_email)) {
+    echo "Message envoyé avec succès.";
+  } else {
+    echo "Erreur lors de l'envoi du message.";
+  }
+}
+?>
+
  <script>
 const form = document.getElementById("contact-form");
 const nameInput = document.getElementById("name");
@@ -87,7 +114,8 @@ form.addEventListener("submit", (e) => {
     showError(messageInput, "Veuillez saisir un message.");
   }
   else {
-    form.submit();
+    form.submit(){
+	(messageInput, "Merci pour votre message, je vous recontacte très rapidement !");
   }
 });
 
@@ -117,6 +145,8 @@ function showError(input, message) {
 }
 
 	</script>
+
+
 </div>
 </body>
 </html>
